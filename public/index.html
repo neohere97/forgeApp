@@ -23,7 +23,7 @@
   <!-- Fixed navbar by Bootstrap: https://getbootstrap.com/examples/navbar-fixed-top/ -->
   <!-- <h1>A wild Dhruv Appears</h1> -->
   <!-- <img src="./a.jpeg" style="width:80vw; height:auto; text-align:center;" alt=""> -->
-  <nav class="navbar navbar-default navbar-fixed-top">
+  <!-- <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <ul class="nav navbar-nav left">
         <li>
@@ -33,11 +33,11 @@
         </li>
       </ul>
     </div>
-  </nav>
+  </nav> -->
   <!-- End of navbar -->
   <div class="container-fluid fill">
     <div class="row fill">
-      <div class="col-sm-4 fill">
+      <!-- <div class="col-sm-4 fill">
         <div class="panel panel-default fill">
           <div class="panel-heading" data-toggle="tooltip">
             Buckets &amp; Objects
@@ -50,9 +50,13 @@
             tree here
           </div>
         </div>
-      </div>
-      <div class="col-sm-8 fill">
+      </div> -->
+      <div class="col-sm-12 fill">
+          <h4 id="temp" style="z-index: 10000; padding:15px; border:rgb(211, 152, 43) solid; margin-left:20px; position: absolute; margin-top:150px; background-color:rgb(255, 255, 255); border-radius:55px; color:rgb(0, 0, 0);">Temperature</h4>
+          <h4 id="humidity" style="z-index: 10000; padding:15px;border:rgb(45, 175, 226) solid;  margin-left:20px; margin-top:228px; position: absolute; background-color:rgb(255, 255, 255); border-radius:55px; color:rgb(0, 0, 0);">Humidity</h4>
+          <h4 id="co2" style="z-index: 10000; padding:15px; border:rgb(99, 108, 112) solid;  margin-left:20px; margin-top:305px; position: absolute; background-color:rgb(255, 255, 255); border-radius:55px; color:rgb(0, 0, 0);">CO<sub>2</sub></h4>
         <div id="forgeViewer"></div>
+        
       </div>
     </div>
   </div>
@@ -82,4 +86,14 @@
     </div>
   </div>
 </body>
+<script>
+var myVar = setInterval(myTimer, 1000);
+
+function myTimer() {
+  var d = new Date();
+  document.getElementById("temp").innerHTML = "Temp : "+  ((Math.random() * 5)+20).toFixed(2).toString() + " C";
+  document.getElementById("humidity").innerHTML = "Humidity : "+  ((Math.random() * 5)+65).toFixed(2).toString() + "%";
+  document.getElementById("co2").innerHTML = "CO2 : "+  ((Math.random() * 10)+405).toFixed(2).toString() + " ppm";
+} 
+</script>
 </html>
